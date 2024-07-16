@@ -1,0 +1,135 @@
+[gd_scene load_steps=10 format=3 uid="uid://durtvisrw3s74"]
+
+[ext_resource type="Script" path="res://actors/Varg/Player.cs" id="1_u8ntk"]
+[ext_resource type="SpriteFrames" uid="uid://d3joqwceulqkm" path="res://actors/Varg/Wolf_animation.tres" id="2_5vl5u"]
+[ext_resource type="SpriteFrames" uid="uid://ll5da3mnffa3" path="res://actors/Varg/Fox_animation.tres" id="3_4i0lx"]
+[ext_resource type="PackedScene" uid="uid://bu5hdigyg1yj3" path="res://UI/GUI/Pause Menu/Pause_Menu.tscn" id="4_y5iil"]
+[ext_resource type="FontFile" uid="uid://3hrus0jbsau" path="res://resources/Fonts/Diphylleia/Diphylleia-Regular.ttf" id="5_5rwoe"]
+[ext_resource type="Script" path="res://actors/Varg/Instrucciones_temporal.cs" id="5_grb30"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_15cpy"]
+size = Vector2(40, 24)
+
+[sub_resource type="LabelSettings" id="LabelSettings_1835h"]
+font = ExtResource("5_5rwoe")
+font_size = 64
+
+[sub_resource type="LabelSettings" id="LabelSettings_eie15"]
+font = ExtResource("5_5rwoe")
+font_size = 22
+
+[node name="Player" type="CharacterBody2D"]
+texture_filter = 1
+script = ExtResource("1_u8ntk")
+metadata/onAttack = false
+
+[node name="Wolf" type="AnimatedSprite2D" parent="."]
+scale = Vector2(4, 4)
+sprite_frames = ExtResource("2_5vl5u")
+animation = &"jumping_bite"
+autoplay = "idle"
+
+[node name="Fox" type="AnimatedSprite2D" parent="."]
+visible = false
+scale = Vector2(4, 4)
+sprite_frames = ExtResource("3_4i0lx")
+animation = &"idle"
+autoplay = "idle"
+frame_progress = 0.724174
+
+[node name="ColisionShape2D" type="CollisionShape2D" parent="."]
+position = Vector2(-4, 20)
+shape = SubResource("RectangleShape2D_15cpy")
+
+[node name="Camera2D" type="Camera2D" parent="."]
+texture_filter = 1
+zoom = Vector2(2.5, 2.5)
+limit_smoothed = true
+position_smoothing_speed = 6.0
+
+[node name="Control2" type="Control" parent="Camera2D"]
+texture_filter = 5
+texture_repeat = 2
+clip_contents = true
+custom_minimum_size = Vector2(1280, 720)
+layout_mode = 3
+anchors_preset = 0
+offset_left = -385.0
+offset_top = -217.0
+offset_right = 895.0
+offset_bottom = 503.0
+scale = Vector2(0.6, 0.6)
+size_flags_horizontal = 3
+size_flags_vertical = 3
+script = ExtResource("5_grb30")
+
+[node name="Panel" type="Panel" parent="Camera2D/Control2"]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="Label" type="Label" parent="Camera2D/Control2"]
+layout_mode = 1
+anchors_preset = 10
+anchor_right = 1.0
+offset_bottom = 23.0
+grow_horizontal = 2
+text = "Controles
+"
+label_settings = SubResource("LabelSettings_1835h")
+horizontal_alignment = 1
+
+[node name="ItemList" type="ItemList" parent="Camera2D/Control2"]
+layout_mode = 1
+anchors_preset = 14
+anchor_top = 0.5
+anchor_right = 1.0
+anchor_bottom = 0.5
+offset_top = -265.0
+offset_bottom = 342.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="Label" type="Label" parent="Camera2D/Control2/ItemList"]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+text = "Movimiento del Personaje:
+A --- izquierda --- flecha izquierda
+w --- arriba --- flecha arriba
+D --- derecha --- flecha derecha
+S ---abajo --- flecha abajo
+X -- ataque
+
+Cambio de personaje
+Q -- Zorro
+E --- Lobo
+
+Interfaz de usuario
+esc --- abrir menu
+
+Cierra este menu presionando ENTER o Espacio"
+label_settings = SubResource("LabelSettings_eie15")
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="Control" parent="Camera2D" instance=ExtResource("4_y5iil")]
+visible = false
+layout_direction = 1
+anchors_preset = 5
+anchor_left = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.0
+offset_left = -385.0
+offset_top = -217.0
+offset_right = 895.0
+offset_bottom = 503.0
+grow_vertical = 1
+scale = Vector2(0.6, 0.6)
+size_flags_stretch_ratio = 0.0
