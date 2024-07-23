@@ -1,14 +1,22 @@
-[gd_scene load_steps=10 format=3 uid="uid://durtvisrw3s74"]
+[gd_scene load_steps=13 format=3 uid="uid://durtvisrw3s74"]
 
 [ext_resource type="Script" path="res://actors/Varg/Player.cs" id="1_u8ntk"]
 [ext_resource type="SpriteFrames" uid="uid://d3joqwceulqkm" path="res://actors/Varg/Wolf_animation.tres" id="2_5vl5u"]
 [ext_resource type="SpriteFrames" uid="uid://ll5da3mnffa3" path="res://actors/Varg/Fox_animation.tres" id="3_4i0lx"]
+[ext_resource type="PackedScene" uid="uid://c6m5vybgcw3xp" path="res://UI/GUI/Mobile/control.tscn" id="4_prhnh"]
 [ext_resource type="PackedScene" uid="uid://bu5hdigyg1yj3" path="res://UI/GUI/Pause Menu/Pause_Menu.tscn" id="4_y5iil"]
 [ext_resource type="FontFile" uid="uid://3hrus0jbsau" path="res://resources/Fonts/Diphylleia/Diphylleia-Regular.ttf" id="5_5rwoe"]
 [ext_resource type="Script" path="res://actors/Varg/Instrucciones_temporal.cs" id="5_grb30"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_15cpy"]
 size = Vector2(40, 24)
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_phcdn"]
+bg_color = Color(0.568627, 0.0627451, 0.2, 1)
+
+[sub_resource type="Theme" id="Theme_qx8m7"]
+ProgressBar/fonts/font = ExtResource("5_5rwoe")
+ProgressBar/styles/fill = SubResource("StyleBoxFlat_phcdn")
 
 [sub_resource type="LabelSettings" id="LabelSettings_1835h"]
 font = ExtResource("5_5rwoe")
@@ -46,6 +54,45 @@ texture_filter = 1
 zoom = Vector2(2.5, 2.5)
 limit_smoothed = true
 position_smoothing_speed = 6.0
+
+[node name="Control4" parent="Camera2D" instance=ExtResource("4_prhnh")]
+anchors_preset = 2
+anchor_top = 1.0
+anchor_right = 0.0
+offset_left = -364.0
+offset_top = 202.0
+offset_right = -364.0
+offset_bottom = 202.0
+grow_horizontal = 1
+grow_vertical = 0
+scale = Vector2(0.6, 0.6)
+
+[node name="Control3" type="Control" parent="Camera2D"]
+texture_filter = 5
+clip_contents = true
+custom_minimum_size = Vector2(1024, 720)
+layout_mode = 3
+anchors_preset = 10
+anchor_right = 1.0
+offset_left = -307.0
+offset_top = -216.0
+offset_right = 717.0
+offset_bottom = 504.0
+grow_horizontal = 2
+scale = Vector2(0.6, 0.6)
+
+[node name="ProgressBar" type="ProgressBar" parent="Camera2D/Control3"]
+layout_mode = 1
+anchors_preset = -1
+anchor_top = 0.044
+anchor_right = 0.199
+anchor_bottom = 0.089
+offset_top = 0.319998
+offset_right = 0.279984
+offset_bottom = -0.0800018
+grow_horizontal = 2
+theme = SubResource("Theme_qx8m7")
+rounded = true
 
 [node name="Control2" type="Control" parent="Camera2D"]
 texture_filter = 5
@@ -133,3 +180,8 @@ offset_bottom = 503.0
 grow_vertical = 1
 scale = Vector2(0.6, 0.6)
 size_flags_stretch_ratio = 0.0
+
+[connection signal="pressed" from="Camera2D/Control4/Container/VBoxContainer/Left" to="." method="_on_left_pressed"]
+[connection signal="pressed" from="Camera2D/Control4/Container/VBoxContainer/Right" to="." method="_on_right_pressed"]
+
+[editable path="Camera2D/Control4"]

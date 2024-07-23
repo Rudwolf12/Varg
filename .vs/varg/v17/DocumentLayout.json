@@ -11,12 +11,12 @@
       "RelativeMoniker": "D:0:0:{2BAD33A4-D639-4430-805C-FE822D4BBBAF}|varg.csproj|solutionrelative:levels\\level_select.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{A2FE74E1-B743-11D0-AE1A-00A0C90FFFC3}|\u003CMiscFiles\u003E|R:\\games\\source\\varg\\actors\\Varg\\Instrucciones_temporal.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{A2FE74E1-B743-11D0-AE1A-00A0C90FFFC3}|\u003CMiscFiles\u003E|solutionrelative:actors\\Varg\\Instrucciones_temporal.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
       "AbsoluteMoniker": "D:0:0:{2BAD33A4-D639-4430-805C-FE822D4BBBAF}|varg.csproj|r:\\games\\source\\varg\\ui\\gui\\pause menu\\pause_menu.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
       "RelativeMoniker": "D:0:0:{2BAD33A4-D639-4430-805C-FE822D4BBBAF}|varg.csproj|solutionrelative:ui\\gui\\pause menu\\pause_menu.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{2BAD33A4-D639-4430-805C-FE822D4BBBAF}|varg.csproj|r:\\games\\source\\varg\\actors\\varg\\instrucciones_temporal.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{2BAD33A4-D639-4430-805C-FE822D4BBBAF}|varg.csproj|solutionrelative:actors\\varg\\instrucciones_temporal.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     }
   ],
   "DocumentGroupContainers": [
@@ -30,7 +30,7 @@
           "Children": [
             {
               "$type": "Document",
-              "DocumentIndex": 2,
+              "DocumentIndex": 3,
               "Title": "Instrucciones_temporal.cs",
               "DocumentMoniker": "R:\\games\\source\\varg\\actors\\Varg\\Instrucciones_temporal.cs",
               "RelativeDocumentMoniker": "actors\\Varg\\Instrucciones_temporal.cs",
@@ -38,12 +38,11 @@
               "RelativeToolTip": "actors\\Varg\\Instrucciones_temporal.cs",
               "ViewState": "AQIAAAAAAAAAAAAAAAAAAA0AAAALAAAA",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2024-07-16T16:03:58.868Z",
-              "EditorCaption": ""
+              "WhenOpened": "2024-07-16T16:03:58.868Z"
             },
             {
               "$type": "Document",
-              "DocumentIndex": 3,
+              "DocumentIndex": 2,
               "Title": "Pause_Menu.cs",
               "DocumentMoniker": "R:\\games\\source\\varg\\UI\\GUI\\Pause Menu\\Pause_Menu.cs",
               "RelativeDocumentMoniker": "UI\\GUI\\Pause Menu\\Pause_Menu.cs",
@@ -51,8 +50,7 @@
               "RelativeToolTip": "UI\\GUI\\Pause Menu\\Pause_Menu.cs",
               "ViewState": "AQIAAAAAAAAAAAAAAAAAAAkAAAAAAAAA",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2024-07-14T21:43:24.998Z",
-              "EditorCaption": ""
+              "WhenOpened": "2024-07-14T21:43:24.998Z"
             },
             {
               "$type": "Document",
@@ -64,8 +62,7 @@
               "RelativeToolTip": "levels\\Level_Select.cs",
               "ViewState": "AQIAABgAAAAAAAAAAAAAACoAAAAIAAAA",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2024-07-14T05:41:45.414Z",
-              "EditorCaption": ""
+              "WhenOpened": "2024-07-14T05:41:45.414Z"
             },
             {
               "$type": "Document",
@@ -75,7 +72,7 @@
               "RelativeDocumentMoniker": "actors\\Varg\\Player.cs",
               "ToolTip": "R:\\games\\source\\varg\\actors\\Varg\\Player.cs",
               "RelativeToolTip": "actors\\Varg\\Player.cs",
-              "ViewState": "AQIAADMAAAAAAAAAAAAAAD8AAAAkAAAA",
+              "ViewState": "AQIAAD0AAAAAAAAAAAAAAIkAAAAAAAAA",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
               "WhenOpened": "2024-07-09T20:12:28.22Z",
               "EditorCaption": ""

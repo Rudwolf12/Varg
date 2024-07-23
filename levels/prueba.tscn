@@ -3,10 +3,10 @@
 [ext_resource type="PackedScene" uid="uid://durtvisrw3s74" path="res://actors/Varg/Player.tscn" id="1_rukw4"]
 [ext_resource type="SpriteFrames" uid="uid://ll5da3mnffa3" path="res://actors/Varg/Fox_animation.tres" id="2_c707c"]
 [ext_resource type="SpriteFrames" uid="uid://d3joqwceulqkm" path="res://actors/Varg/Wolf_animation.tres" id="4_0a4ea"]
-[ext_resource type="Texture2D" uid="uid://gtyq5ndth7kc" path="res://resources/MinifolksForestAnimals/Clouds 7/1.png" id="4_6k5nr"]
-[ext_resource type="Texture2D" uid="uid://basyqicl7taik" path="res://resources/MinifolksForestAnimals/Clouds 7/2.png" id="5_kyduq"]
-[ext_resource type="Texture2D" uid="uid://b7y1kmjxe6iyg" path="res://resources/MinifolksForestAnimals/Clouds 7/3.png" id="6_ixp5n"]
-[ext_resource type="Texture2D" uid="uid://dfsssqf4aaism" path="res://resources/MinifolksForestAnimals/Clouds 7/4.png" id="7_6p37t"]
+[ext_resource type="Texture2D" uid="uid://gtyq5ndth7kc" path="res://resources/free-sky-with-clouds-background-pixel-art-set/Clouds/Clouds 7/1.png" id="4_6k5nr"]
+[ext_resource type="Texture2D" uid="uid://basyqicl7taik" path="res://resources/free-sky-with-clouds-background-pixel-art-set/Clouds/Clouds 7/2.png" id="5_kyduq"]
+[ext_resource type="Texture2D" uid="uid://b7y1kmjxe6iyg" path="res://resources/free-sky-with-clouds-background-pixel-art-set/Clouds/Clouds 7/3.png" id="6_ixp5n"]
+[ext_resource type="Texture2D" uid="uid://dfsssqf4aaism" path="res://resources/free-sky-with-clouds-background-pixel-art-set/Clouds/Clouds 7/4.png" id="7_6p37t"]
 
 [sub_resource type="Gradient" id="Gradient_ou4p4"]
 colors = PackedColorArray(0.769111, 0.539984, 0.107052, 1, 0.436537, 0.273714, 0.0534055, 1)
