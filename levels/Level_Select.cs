@@ -15,12 +15,11 @@ public partial class Level_Select : Control
     // Called every frame. 'delta' is the elapsed time since the previous frame.
     public override void _Process(double delta)
     {
-        if (Input.IsActionPressed("ui_up"))
+        if (Input.IsActionJustPressed("ui_up"))
         {
             level_num++;
         }
-        Console.WriteLine(level_num);
-        if (Input.IsActionPressed("ui_down"))
+        if (Input.IsActionJustPressed("ui_down"))
         {
             level_num--;
         }
@@ -34,9 +33,16 @@ public partial class Level_Select : Control
             lblLevel.Text = "1 -- Prueba";
 
         }
-        if (Input.IsKeyPressed(Key.Enter))
+        if (level_num == 2)
+        {
+            lblLevel.Text = "2 -- Multiplayer Prueba";
+
+        }
+
+        if (Input.IsKeyPressed(Key.Enter) & lblLevel.Text == "1 -- Prueba")
             GetTree().ChangeSceneToPacked(GD.Load<PackedScene>("res://levels/prueba.tscn"));
-         
+        if (Input.IsKeyPressed(Key.Enter) & lblLevel.Text == "2 -- Multiplayer Prueba")
+            GetTree().ChangeSceneToPacked(GD.Load<PackedScene>("res://levels/Multiplayer.tscn"));
     }
     public void _on_btn_exit_pressed()
     {

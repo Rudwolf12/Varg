@@ -1,0 +1,163 @@
+[gd_scene load_steps=7 format=3 uid="uid://teibho2h75x1"]
+
+[ext_resource type="FontFile" uid="uid://3hrus0jbsau" path="res://resources/Fonts/Diphylleia/Diphylleia-Regular.ttf" id="1_7upxf"]
+[ext_resource type="Script" path="res://UI/Container.cs" id="2_05c7s"]
+
+[sub_resource type="LabelSettings" id="LabelSettings_y5ob0"]
+font = ExtResource("1_7upxf")
+font_size = 64
+font_color = Color(0, 0, 0, 1)
+shadow_color = Color(1, 0.45098, 0.384314, 0.309804)
+
+[sub_resource type="Theme" id="Theme_bpw7i"]
+Button/font_sizes/font_size = 20
+Button/fonts/font = ExtResource("1_7upxf")
+
+[sub_resource type="LabelSettings" id="LabelSettings_hpbxg"]
+font = ExtResource("1_7upxf")
+font_size = 32
+
+[sub_resource type="LabelSettings" id="LabelSettings_jtflm"]
+font = ExtResource("1_7upxf")
+font_size = 64
+font_color = Color(0, 0, 0, 1)
+
+[node name="Control" type="Control"]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="Bg" type="ColorRect" parent="."]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+color = Color(0.611465, 0.695121, 1, 1)
+
+[node name="Label" type="Label" parent="."]
+layout_mode = 1
+anchors_preset = 10
+anchor_right = 1.0
+offset_bottom = 108.0
+grow_horizontal = 2
+text = "Varg"
+label_settings = SubResource("LabelSettings_y5ob0")
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="Panel" type="Panel" parent="."]
+custom_minimum_size = Vector2(500, 400)
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -20.0
+offset_top = -20.0
+offset_right = 20.0
+offset_bottom = 20.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="Container" type="BoxContainer" parent="Panel"]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -210.0
+offset_top = -103.0
+offset_right = 210.0
+offset_bottom = 103.0
+grow_horizontal = 2
+grow_vertical = 2
+alignment = 1
+vertical = true
+script = ExtResource("2_05c7s")
+
+[node name="New_game" type="Button" parent="Panel/Container"]
+layout_mode = 2
+theme = SubResource("Theme_bpw7i")
+text = "Nuevo juego."
+
+[node name="Continue" type="Button" parent="Panel/Container"]
+layout_mode = 2
+theme = SubResource("Theme_bpw7i")
+text = "Continuar juego."
+
+[node name="Options" type="Button" parent="Panel/Container"]
+layout_mode = 2
+theme = SubResource("Theme_bpw7i")
+text = "Configuración."
+
+[node name="Credits" type="Button" parent="Panel/Container"]
+layout_mode = 2
+theme = SubResource("Theme_bpw7i")
+text = "Creditos."
+
+[node name="Exit" type="Button" parent="Panel/Container"]
+layout_mode = 2
+theme = SubResource("Theme_bpw7i")
+text = "Salir."
+
+[node name="Continue_Menu" type="Control" parent="."]
+visible = false
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="Bg" type="ColorRect" parent="Continue_Menu"]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+color = Color(0.611465, 0.695121, 1, 1)
+
+[node name="Panel" type="Panel" parent="Continue_Menu"]
+custom_minimum_size = Vector2(0, 50)
+layout_mode = 1
+anchors_preset = 10
+anchor_right = 1.0
+offset_bottom = 64.0
+grow_horizontal = 2
+
+[node name="Label" type="Label" parent="Continue_Menu/Panel"]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+text = "Selecciona el archivo de guardado"
+label_settings = SubResource("LabelSettings_hpbxg")
+vertical_alignment = 1
+
+[node name="Label" type="Label" parent="Continue_Menu"]
+layout_mode = 1
+anchors_preset = 14
+anchor_top = 0.5
+anchor_right = 1.0
+anchor_bottom = 0.5
+offset_top = -11.5
+offset_bottom = 11.5
+grow_horizontal = 2
+grow_vertical = 2
+text = "En construccion..."
+label_settings = SubResource("LabelSettings_jtflm")
+horizontal_alignment = 1
+
+[connection signal="pressed" from="Panel/Container/New_game" to="Panel/Container" method="_on_new_game_pressed"]
+[connection signal="pressed" from="Panel/Container/Continue" to="Panel/Container" method="_on_continue_pressed"]
+[connection signal="pressed" from="Panel/Container/Exit" to="Panel/Container" method="_on_exit_pressed"]

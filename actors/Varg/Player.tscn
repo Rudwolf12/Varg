@@ -67,6 +67,12 @@ grow_horizontal = 1
 grow_vertical = 0
 scale = Vector2(0.6, 0.6)
 
+[node name="Up" parent="Camera2D/Control4/Container/BoxContainer" index="0"]
+visible = false
+
+[node name="Down" parent="Camera2D/Control4/Container/VBoxContainer" index="1"]
+visible = false
+
 [node name="Control3" type="Control" parent="Camera2D"]
 texture_filter = 5
 clip_contents = true
@@ -147,7 +153,7 @@ anchor_right = 1.0
 anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
-text = "Movimiento del Personaje:
+text = "	Movimiento del Personaje:
 A --- izquierda --- flecha izquierda
 w --- arriba --- flecha arriba
 D --- derecha --- flecha derecha
@@ -161,7 +167,7 @@ E --- Lobo
 Interfaz de usuario
 esc --- abrir menu
 
-Cierra este menu presionando ENTER o Espacio"
+Cierra este menu presionando ENTER"
 label_settings = SubResource("LabelSettings_eie15")
 horizontal_alignment = 1
 vertical_alignment = 1

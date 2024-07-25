@@ -54,7 +54,6 @@ public partial class Player : CharacterBody2D
             OnAttack = false;
         }
 
-        Console.WriteLine(OnAction);
         if (Input.IsKeyPressed(Key.Q))
         {
             _Wolf_Animated.Visible = true;
@@ -135,5 +134,9 @@ public partial class Player : CharacterBody2D
         Velocity = velocity;
 		MoveAndSlide();
 	}
+    public void _on_left_pressed()
+    {
+        GD.Print("XDDDD");
+    }
 
 }
