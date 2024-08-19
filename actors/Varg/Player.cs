@@ -11,12 +11,13 @@ public partial class Player : CharacterBody2D
 
 	private AnimatedSprite2D _Wolf_Animated;
     private AnimatedSprite2D _Fox_Animated;
+    private ProgressBar _vita;
 
     public override void _Ready()
     {
         _Wolf_Animated = GetNode<AnimatedSprite2D>("Wolf");
         _Fox_Animated = GetNode<AnimatedSprite2D>("Fox");
-        
+        _vita = GetNode<ProgressBar>("Vita");
     }
 
     public override void _PhysicsProcess(double delta)
@@ -134,9 +135,5 @@ public partial class Player : CharacterBody2D
         Velocity = velocity;
 		MoveAndSlide();
 	}
-    public void _on_left_pressed()
-    {
-        GD.Print("XDDDD");
-    }
 
 }

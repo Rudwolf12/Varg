@@ -3,18 +3,22 @@ using System;
 
 public partial class Level_Select : Control
 {
-    // Called when the node enters the scene tree for the first time.
     private Label lblLevel;
+    private Label lblInstruccion;
     private Button btnExit;
     public override void _Ready()
-	{
-		lblLevel = GetNode<Label>("lblLevel");
+    {
+        lblLevel = GetNode<Label>("lblLevel");
+        lblInstruccion = GetNode<Label>("Instruccion");
         btnExit = GetNode<Button>("btnExit");
     }
-    public int level_num = 0;
+    private int level_num = 0; 
     // Called every frame. 'delta' is the elapsed time since the previous frame.
     public override void _Process(double delta)
     {
+        Random rand = new Random();
+        int randomInRange = rand.Next(1, 100);
+
         if (Input.IsActionJustPressed("ui_up"))
         {
             level_num++;
@@ -38,6 +42,12 @@ public partial class Level_Select : Control
             lblLevel.Text = "2 -- Multiplayer Prueba";
 
         }
+
+        if (randomInRange == 25)
+            lblInstruccion.Text = "Presiona Enter para continuar";
+
+        if (randomInRange == 75)
+            lblInstruccion.Text = "Presiona para continuar";
 
         if (Input.IsKeyPressed(Key.Enter) & lblLevel.Text == "1 -- Prueba")
             GetTree().ChangeSceneToPacked(GD.Load<PackedScene>("res://levels/prueba.tscn"));

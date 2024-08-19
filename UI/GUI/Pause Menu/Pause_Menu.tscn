@@ -42,39 +42,34 @@ label_settings = SubResource("LabelSettings_t55pv")
 horizontal_alignment = 1
 language = "es_MX"
 
-[node name="btnReanudar" type="Button" parent="."]
-clip_contents = true
+[node name="BoxContainer" type="BoxContainer" parent="."]
 layout_mode = 1
 anchors_preset = 8
 anchor_left = 0.5
 anchor_top = 0.5
 anchor_right = 0.5
 anchor_bottom = 0.5
-offset_left = -4.0
+offset_left = -184.5
 offset_top = -21.5
-offset_right = 4.0
+offset_right = 184.5
 offset_bottom = 21.5
 grow_horizontal = 2
 grow_vertical = 2
+alignment = 1
+vertical = true
+
+[node name="btnReanudar" type="Button" parent="BoxContainer"]
+clip_contents = true
+layout_mode = 2
 focus_neighbor_bottom = NodePath("../btnRegresar")
 theme_override_fonts/font = ExtResource("1_xsiia")
 theme_override_font_sizes/font_size = 24
 text = "Reanudar"
 language = "es_MX"
 
-[node name="btnRegresar" type="Button" parent="."]
+[node name="btnRegresar" type="Button" parent="BoxContainer"]
 clip_contents = true
 layout_mode = 2
-anchor_left = 0.426
-anchor_top = 0.572
-anchor_right = 0.574
-anchor_bottom = 0.65
-offset_left = 0.253967
-offset_top = -0.0280151
-offset_right = -0.254028
-offset_bottom = 0.149994
-grow_horizontal = 2
-grow_vertical = 2
 focus_neighbor_top = NodePath("../btnReanudar")
 focus_neighbor_bottom = NodePath("../btnSalir")
 theme_override_fonts/font = ExtResource("1_xsiia")
@@ -82,24 +77,14 @@ theme_override_font_sizes/font_size = 24
 text = "Regresar al menu"
 language = "es_MX"
 
-[node name="btnSalir" type="Button" parent="."]
+[node name="btnSalir" type="Button" parent="BoxContainer"]
 clip_contents = true
 layout_mode = 2
-anchor_left = 0.479
-anchor_top = 0.692
-anchor_right = 0.521
-anchor_bottom = 0.77
-offset_left = -0.259033
-offset_top = 0.09198
-offset_right = 0.258972
-offset_bottom = 0.269989
-grow_horizontal = 2
-grow_vertical = 2
 focus_neighbor_top = NodePath("../btnRegresar")
 theme_override_fonts/font = ExtResource("1_xsiia")
 theme_override_font_sizes/font_size = 24
 text = "Salir"
 language = "es_MX"
 
-[connection signal="pressed" from="btnReanudar" to="." method="_on_btn_reanudar_pressed"]
-[connection signal="pressed" from="btnSalir" to="." method="_on_btn_salir_pressed"]
+[connection signal="pressed" from="BoxContainer/btnReanudar" to="." method="_on_btn_reanudar_pressed"]
+[connection signal="pressed" from="BoxContainer/btnSalir" to="." method="_on_btn_salir_pressed"]

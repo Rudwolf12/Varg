@@ -5,7 +5,7 @@
 [ext_resource type="SpriteFrames" uid="uid://ll5da3mnffa3" path="res://actors/Varg/Fox_animation.tres" id="3_p14we"]
 [ext_resource type="SpriteFrames" uid="uid://d3joqwceulqkm" path="res://actors/Varg/Wolf_animation.tres" id="6_4kg6w"]
 [ext_resource type="Script" path="res://actors/Varg/Player.cs" id="7_iiv11"]
-[ext_resource type="PackedScene" uid="uid://dd0nibjqxh4am" path="res://levels/prueba.tscn" id="7_pum62"]
+[ext_resource type="PackedScene" uid="uid://dd0nibjqxh4am" path="res://UI/prueba.tscn" id="7_pum62"]
 [ext_resource type="PackedScene" uid="uid://durtvisrw3s74" path="res://actors/Varg/Player.tscn" id="8_5204l"]
 
 [sub_resource type="LabelSettings" id="LabelSettings_ascwr"]
@@ -42,6 +42,7 @@ grow_vertical = 2
 color = Color(0.135751, 0.121529, 0.279483, 1)
 
 [node name="box" type="BoxContainer" parent="."]
+visible = false
 layout_mode = 1
 anchors_preset = 15
 anchor_right = 1.0
@@ -51,9 +52,10 @@ grow_vertical = 2
 metadata/_edit_use_anchors_ = true
 
 [node name="AcceptDialog" type="AcceptDialog" parent="box"]
-title = "¿Estas seguro?"
+title = "¿Estas seguro de salir?"
 initial_position = 1
 size = Vector2i(200, 100)
+ok_button_text = "Salir"
 
 [node name="Label" type="Label" parent="."]
 layout_mode = 1
@@ -97,7 +99,7 @@ grow_horizontal = 2
 grow_vertical = 2
 label_settings = SubResource("LabelSettings_v72ak")
 
-[node name="Label2" type="Label" parent="."]
+[node name="Instruccion" type="Label" parent="."]
 layout_mode = 1
 anchors_preset = 14
 anchor_top = 0.5

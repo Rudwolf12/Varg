@@ -5,26 +5,6 @@
     {
       "AbsoluteMoniker": "D:0:0:{2BAD33A4-D639-4430-805C-FE822D4BBBAF}|varg.csproj|r:\\games\\source\\varg\\actors\\varg\\player.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
       "RelativeMoniker": "D:0:0:{2BAD33A4-D639-4430-805C-FE822D4BBBAF}|varg.csproj|solutionrelative:actors\\varg\\player.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{2BAD33A4-D639-4430-805C-FE822D4BBBAF}|varg.csproj|r:\\games\\source\\varg\\levels\\level_select.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{2BAD33A4-D639-4430-805C-FE822D4BBBAF}|varg.csproj|solutionrelative:levels\\level_select.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{2BAD33A4-D639-4430-805C-FE822D4BBBAF}|varg.csproj|r:\\games\\source\\varg\\ui\\gui\\pause menu\\pause_menu.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{2BAD33A4-D639-4430-805C-FE822D4BBBAF}|varg.csproj|solutionrelative:ui\\gui\\pause menu\\pause_menu.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{A2FE74E1-B743-11D0-AE1A-00A0C90FFFC3}|\u003CMiscFiles\u003E|R:\\games\\source\\varg\\UI\\Container.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{A2FE74E1-B743-11D0-AE1A-00A0C90FFFC3}|\u003CMiscFiles\u003E|solutionrelative:UI\\Container.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{2BAD33A4-D639-4430-805C-FE822D4BBBAF}|varg.csproj|r:\\games\\source\\varg\\actors\\varg\\instrucciones_temporal.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{2BAD33A4-D639-4430-805C-FE822D4BBBAF}|varg.csproj|solutionrelative:actors\\varg\\instrucciones_temporal.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{2BAD33A4-D639-4430-805C-FE822D4BBBAF}|varg.csproj|r:\\games\\source\\varg\\varg.csproj||{FA3CD31E-987B-443A-9B81-186104E8DAC1}|",
-      "RelativeMoniker": "D:0:0:{2BAD33A4-D639-4430-805C-FE822D4BBBAF}|varg.csproj|solutionrelative:varg.csproj||{FA3CD31E-987B-443A-9B81-186104E8DAC1}|"
     }
   ],
   "DocumentGroupContainers": [
@@ -34,73 +14,8 @@
       "DocumentGroups": [
         {
           "DockedWidth": 200,
-          "SelectedChildIndex": 5,
+          "SelectedChildIndex": 0,
           "Children": [
-            {
-              "$type": "Document",
-              "DocumentIndex": 5,
-              "Title": "varg",
-              "DocumentMoniker": "R:\\GAMES\\SOURCE\\VARG\\varg.csproj",
-              "RelativeDocumentMoniker": "varg.csproj",
-              "ToolTip": "R:\\GAMES\\SOURCE\\VARG\\varg.csproj",
-              "RelativeToolTip": "varg.csproj",
-              "ViewState": "AQIAAAAAAAAAAAAAAAAAAAUAAAAlAAAA",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000758|",
-              "WhenOpened": "2024-07-25T06:16:51.517Z",
-              "EditorCaption": ""
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 3,
-              "Title": "Container.cs",
-              "DocumentMoniker": "R:\\games\\source\\varg\\UI\\Container.cs",
-              "RelativeDocumentMoniker": "UI\\Container.cs",
-              "ToolTip": "R:\\games\\source\\varg\\UI\\Container.cs",
-              "RelativeToolTip": "UI\\Container.cs",
-              "ViewState": "AQIAAAEAAAAAAAAAAAAAAAkAAAAiAAAA",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2024-07-25T05:20:11.735Z",
-              "EditorCaption": ""
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 4,
-              "Title": "Instrucciones_temporal.cs",
-              "DocumentMoniker": "R:\\games\\source\\varg\\actors\\Varg\\Instrucciones_temporal.cs",
-              "RelativeDocumentMoniker": "actors\\Varg\\Instrucciones_temporal.cs",
-              "ToolTip": "R:\\games\\source\\varg\\actors\\Varg\\Instrucciones_temporal.cs",
-              "RelativeToolTip": "actors\\Varg\\Instrucciones_temporal.cs",
-              "ViewState": "AQIAAAAAAAAAAAAAAAAAAA0AAAAiAAAA",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2024-07-16T16:03:58.868Z",
-              "EditorCaption": ""
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 2,
-              "Title": "Pause_Menu.cs",
-              "DocumentMoniker": "R:\\games\\source\\varg\\UI\\GUI\\Pause Menu\\Pause_Menu.cs",
-              "RelativeDocumentMoniker": "UI\\GUI\\Pause Menu\\Pause_Menu.cs",
-              "ToolTip": "R:\\games\\source\\varg\\UI\\GUI\\Pause Menu\\Pause_Menu.cs",
-              "RelativeToolTip": "UI\\GUI\\Pause Menu\\Pause_Menu.cs",
-              "ViewState": "AQIAAAAAAAAAAAAAAAAAAAgAAAAAAAAA",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2024-07-14T21:43:24.998Z",
-              "EditorCaption": ""
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 1,
-              "Title": "Level_Select.cs",
-              "DocumentMoniker": "R:\\games\\source\\varg\\levels\\Level_Select.cs",
-              "RelativeDocumentMoniker": "levels\\Level_Select.cs",
-              "ToolTip": "R:\\games\\source\\varg\\levels\\Level_Select.cs",
-              "RelativeToolTip": "levels\\Level_Select.cs",
-              "ViewState": "AQIAAAMAAAAAAAAAAAAAABUAAAAeAAAA",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2024-07-14T05:41:45.414Z",
-              "EditorCaption": ""
-            },
             {
               "$type": "Document",
               "DocumentIndex": 0,
@@ -109,7 +24,7 @@
               "RelativeDocumentMoniker": "actors\\Varg\\Player.cs",
               "ToolTip": "R:\\games\\source\\varg\\actors\\Varg\\Player.cs",
               "RelativeToolTip": "actors\\Varg\\Player.cs",
-              "ViewState": "AQIAACkAAAAAAAAAAAAAADcAAAAAAAAA",
+              "ViewState": "AQIAAH4AAAAAAAAAAAAAAIgAAAACAAAA",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
               "WhenOpened": "2024-07-09T20:12:28.22Z",
               "EditorCaption": ""

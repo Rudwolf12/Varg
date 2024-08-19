@@ -1,7 +1,7 @@
 [gd_scene load_steps=7 format=3 uid="uid://teibho2h75x1"]
 
+[ext_resource type="Script" path="res://UI/Menu.cs" id="1_4ouby"]
 [ext_resource type="FontFile" uid="uid://3hrus0jbsau" path="res://resources/Fonts/Diphylleia/Diphylleia-Regular.ttf" id="1_7upxf"]
-[ext_resource type="Script" path="res://UI/Container.cs" id="2_05c7s"]
 
 [sub_resource type="LabelSettings" id="LabelSettings_y5ob0"]
 font = ExtResource("1_7upxf")
@@ -29,6 +29,7 @@ anchor_right = 1.0
 anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
+script = ExtResource("1_4ouby")
 
 [node name="Bg" type="ColorRect" parent="."]
 layout_mode = 1
@@ -80,7 +81,6 @@ grow_horizontal = 2
 grow_vertical = 2
 alignment = 1
 vertical = true
-script = ExtResource("2_05c7s")
 
 [node name="New_game" type="Button" parent="Panel/Container"]
 layout_mode = 2
@@ -158,6 +158,22 @@ text = "En construccion..."
 label_settings = SubResource("LabelSettings_jtflm")
 horizontal_alignment = 1
 
-[connection signal="pressed" from="Panel/Container/New_game" to="Panel/Container" method="_on_new_game_pressed"]
-[connection signal="pressed" from="Panel/Container/Continue" to="Panel/Container" method="_on_continue_pressed"]
-[connection signal="pressed" from="Panel/Container/Exit" to="Panel/Container" method="_on_exit_pressed"]
+[node name="Exit" type="Button" parent="Continue_Menu"]
+layout_mode = 1
+anchors_preset = 7
+anchor_left = 0.5
+anchor_top = 1.0
+anchor_right = 0.5
+anchor_bottom = 1.0
+offset_left = -27.5
+offset_top = -38.0
+offset_right = 27.5
+grow_horizontal = 2
+grow_vertical = 0
+theme = SubResource("Theme_bpw7i")
+text = "Salir."
+
+[connection signal="pressed" from="Panel/Container/New_game" to="." method="_on_new_game_pressed"]
+[connection signal="pressed" from="Panel/Container/Continue" to="." method="_on_continue_pressed"]
+[connection signal="pressed" from="Panel/Container/Exit" to="." method="_on_exit_pressed"]
+[connection signal="pressed" from="Continue_Menu/Exit" to="." method="_on_exit_pressed"]

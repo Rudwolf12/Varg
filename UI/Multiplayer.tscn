@@ -1,0 +1,35 @@
+[gd_scene load_steps=5 format=3 uid="uid://c5t1jth5a1ouv"]
+
+[ext_resource type="PackedScene" uid="uid://durtvisrw3s74" path="res://actors/Varg/Player.tscn" id="1_46edt"]
+
+[sub_resource type="Gradient" id="Gradient_ou4p4"]
+colors = PackedColorArray(0.769111, 0.539984, 0.107052, 1, 0.436537, 0.273714, 0.0534055, 1)
+metadata/_snap_count = 50
+
+[sub_resource type="GradientTexture1D" id="GradientTexture1D_4ykq4"]
+gradient = SubResource("Gradient_ou4p4")
+use_hdr = true
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_ht4y1"]
+size = Vector2(1161, 255)
+
+[node name="Node2D" type="Node2D"]
+
+[node name="MultiplayerSpawner" type="MultiplayerSpawner" parent="."]
+spawn_path = NodePath("Player")
+spawn_limit = 2
+
+[node name="Player" parent="MultiplayerSpawner" instance=ExtResource("1_46edt")]
+
+[node name="Area2D" type="StaticBody2D" parent="."]
+position = Vector2(0, 720)
+
+[node name="Sprite2D" type="Sprite2D" parent="Area2D"]
+scale = Vector2(10, 256)
+texture = SubResource("GradientTexture1D_4ykq4")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Area2D"]
+z_index = 2
+position = Vector2(0, 0.5)
+scale = Vector2(10, 1)
+shape = SubResource("RectangleShape2D_ht4y1")
