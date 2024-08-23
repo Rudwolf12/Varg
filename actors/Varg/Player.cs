@@ -17,15 +17,27 @@ public partial class Player : CharacterBody2D
     {
         _Wolf_Animated = GetNode<AnimatedSprite2D>("Wolf");
         _Fox_Animated = GetNode<AnimatedSprite2D>("Fox");
-        _vita = GetNode<ProgressBar>("Vita");
+        _vita = GetNode<ProgressBar>("Barra_vida/Vita");
     }
 
     public override void _PhysicsProcess(double delta)
 	{
+        int Vita = 100;
         bool OnAttack = false;
         bool OnMove = false;
         bool OnJump = false;
         bool OnAction = false;
+        bool Died = false;
+
+        _vita.Value = Vita;
+        if (Vita == 0)
+        {
+            Died = true;
+        }
+        else
+        {
+            Died = false;
+        }
 
         if (Input.IsActionPressed("ui_attack"))
         {
@@ -46,7 +58,7 @@ public partial class Player : CharacterBody2D
             OnJump = true;
         }
 
-        if (OnAttack | OnMove | OnJump)
+        if (OnAttack | OnMove | OnJump | Died)
         {
             OnAction = true;
         }
@@ -124,6 +136,12 @@ public partial class Player : CharacterBody2D
             else if (OnAttack && OnJump)
             {
                 _Wolf_Animated.Play("jumping_bite");
+            }
+
+            if (Died)
+            {
+                _Wolf_Animated.Play("die");
+                _Fox_Animated.Play("die");
             }
         }
         else

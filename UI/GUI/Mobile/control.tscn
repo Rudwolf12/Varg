@@ -1,7 +1,8 @@
-[gd_scene load_steps=5 format=3 uid="uid://c6m5vybgcw3xp"]
+[gd_scene load_steps=6 format=3 uid="uid://c6m5vybgcw3xp"]
 
 [ext_resource type="Texture2D" uid="uid://bieeaga3wvfdr" path="res://UI/GUI/Arrows/Left.svg" id="1_530hs"]
 [ext_resource type="Texture2D" uid="uid://b66w4db6oym7e" path="res://UI/GUI/Arrows/Down.svg" id="2_ej2d1"]
+[ext_resource type="Script" path="res://UI/GUI/Mobile/Up.cs" id="2_hicoi"]
 [ext_resource type="Texture2D" uid="uid://q5pbpti7qfmm" path="res://UI/GUI/Arrows/Right.svg" id="3_attw2"]
 [ext_resource type="Texture2D" uid="uid://c5rekdur28vkv" path="res://UI/GUI/Arrows/Up.svg" id="4_2oikb"]
 
@@ -30,6 +31,7 @@ alignment = 1
 [node name="Up" type="Button" parent="Container/BoxContainer"]
 layout_mode = 2
 icon = ExtResource("4_2oikb")
+script = ExtResource("2_hicoi")
 
 [node name="VBoxContainer" type="BoxContainer" parent="Container"]
 layout_mode = 2
@@ -44,5 +46,6 @@ layout_mode = 2
 icon = ExtResource("2_ej2d1")
 
 [node name="Right" type="Button" parent="Container/VBoxContainer"]
+texture_filter = 5
 layout_mode = 2
 icon = ExtResource("3_attw2")

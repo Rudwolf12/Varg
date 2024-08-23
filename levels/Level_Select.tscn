@@ -61,11 +61,12 @@ ok_button_text = "Salir"
 layout_mode = 1
 anchors_preset = 10
 anchor_right = 1.0
-offset_bottom = 23.0
+offset_bottom = 125.0
 grow_horizontal = 2
 text = "Bienvenido al modo de seleccion de niveles."
 label_settings = SubResource("LabelSettings_ascwr")
 horizontal_alignment = 1
+vertical_alignment = 1
 
 [node name="btnExit" type="Button" parent="."]
 texture_filter = 1
