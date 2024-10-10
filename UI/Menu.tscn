@@ -1,7 +1,8 @@
-[gd_scene load_steps=7 format=3 uid="uid://teibho2h75x1"]
+[gd_scene load_steps=11 format=3 uid="uid://teibho2h75x1"]
 
 [ext_resource type="Script" path="res://UI/Menu.cs" id="1_4ouby"]
 [ext_resource type="FontFile" uid="uid://3hrus0jbsau" path="res://resources/Fonts/Diphylleia/Diphylleia-Regular.ttf" id="1_7upxf"]
+[ext_resource type="Texture2D" uid="uid://u1d16410r8af" path="res://resources/Logo.png" id="3_a13ce"]
 
 [sub_resource type="LabelSettings" id="LabelSettings_y5ob0"]
 font = ExtResource("1_7upxf")
@@ -15,12 +16,24 @@ Button/fonts/font = ExtResource("1_7upxf")
 
 [sub_resource type="LabelSettings" id="LabelSettings_hpbxg"]
 font = ExtResource("1_7upxf")
-font_size = 32
+font_size = 64
 
 [sub_resource type="LabelSettings" id="LabelSettings_jtflm"]
 font = ExtResource("1_7upxf")
 font_size = 64
 font_color = Color(0, 0, 0, 1)
+
+[sub_resource type="LabelSettings" id="LabelSettings_8f2n4"]
+font = ExtResource("1_7upxf")
+font_size = 64
+
+[sub_resource type="LabelSettings" id="LabelSettings_qisyc"]
+font = ExtResource("1_7upxf")
+font_size = 22
+
+[sub_resource type="LabelSettings" id="LabelSettings_u46a6"]
+font = ExtResource("1_7upxf")
+font_size = 32
 
 [node name="Control" type="Control"]
 layout_mode = 3
@@ -30,6 +43,7 @@ anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
 script = ExtResource("1_4ouby")
+metadata/_edit_use_anchors_ = true
 
 [node name="Bg" type="ColorRect" parent="."]
 layout_mode = 1
@@ -38,31 +52,44 @@ anchor_right = 1.0
 anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
-color = Color(0.611465, 0.695121, 1, 1)
+color = Color(0.529412, 0.764706, 0.741176, 1)
 
 [node name="Label" type="Label" parent="."]
+visible = false
 layout_mode = 1
 anchors_preset = 10
 anchor_right = 1.0
-offset_bottom = 108.0
+offset_bottom = 160.0
 grow_horizontal = 2
-text = "Varg"
+text = "Animal Quest"
 label_settings = SubResource("LabelSettings_y5ob0")
 horizontal_alignment = 1
 vertical_alignment = 1
 
+[node name="TextureRect" type="TextureRect" parent="."]
+texture_filter = 5
+layout_mode = 1
+anchors_preset = 10
+anchor_right = 1.0
+offset_top = -29.0
+offset_bottom = 223.0
+grow_horizontal = 2
+texture = ExtResource("3_a13ce")
+expand_mode = 2
+stretch_mode = 5
+
 [node name="Panel" type="Panel" parent="."]
-custom_minimum_size = Vector2(500, 400)
+custom_minimum_size = Vector2(500, 300)
 layout_mode = 1
 anchors_preset = 8
 anchor_left = 0.5
 anchor_top = 0.5
 anchor_right = 0.5
 anchor_bottom = 0.5
-offset_left = -20.0
-offset_top = -20.0
-offset_right = 20.0
-offset_bottom = 20.0
+offset_left = -250.0
+offset_top = -132.5
+offset_right = 250.0
+offset_bottom = 172.5
 grow_horizontal = 2
 grow_vertical = 2
 
@@ -85,27 +112,32 @@ vertical = true
 [node name="New_game" type="Button" parent="Panel/Container"]
 layout_mode = 2
 theme = SubResource("Theme_bpw7i")
-text = "Nuevo juego."
+text = "Nuevo juego"
 
 [node name="Continue" type="Button" parent="Panel/Container"]
 layout_mode = 2
 theme = SubResource("Theme_bpw7i")
-text = "Continuar juego."
+text = "Continuar juego"
 
 [node name="Options" type="Button" parent="Panel/Container"]
 layout_mode = 2
 theme = SubResource("Theme_bpw7i")
-text = "Configuración."
+text = "Configuración"
+
+[node name="Help" type="Button" parent="Panel/Container"]
+layout_mode = 2
+theme = SubResource("Theme_bpw7i")
+text = "Ayuda"
 
 [node name="Credits" type="Button" parent="Panel/Container"]
 layout_mode = 2
 theme = SubResource("Theme_bpw7i")
-text = "Creditos."
+text = "Creditos"
 
 [node name="Exit" type="Button" parent="Panel/Container"]
 layout_mode = 2
 theme = SubResource("Theme_bpw7i")
-text = "Salir."
+text = "Salir"
 
 [node name="Continue_Menu" type="Control" parent="."]
 visible = false
@@ -123,14 +155,14 @@ anchor_right = 1.0
 anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
-color = Color(0.611465, 0.695121, 1, 1)
+color = Color(0.529412, 0.764706, 0.741176, 1)
 
 [node name="Panel" type="Panel" parent="Continue_Menu"]
 custom_minimum_size = Vector2(0, 50)
 layout_mode = 1
 anchors_preset = 10
 anchor_right = 1.0
-offset_bottom = 64.0
+offset_bottom = 100.0
 grow_horizontal = 2
 
 [node name="Label" type="Label" parent="Continue_Menu/Panel"]
@@ -142,38 +174,250 @@ grow_horizontal = 2
 grow_vertical = 2
 text = "Selecciona el archivo de guardado"
 label_settings = SubResource("LabelSettings_hpbxg")
+horizontal_alignment = 1
 vertical_alignment = 1
 
 [node name="Label" type="Label" parent="Continue_Menu"]
 layout_mode = 1
-anchors_preset = 14
-anchor_top = 0.5
+anchors_preset = 15
 anchor_right = 1.0
-anchor_bottom = 0.5
-offset_top = -11.5
-offset_bottom = 11.5
+anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
 text = "En construccion..."
 label_settings = SubResource("LabelSettings_jtflm")
 horizontal_alignment = 1
+vertical_alignment = 1
 
 [node name="Exit" type="Button" parent="Continue_Menu"]
+texture_filter = 5
 layout_mode = 1
 anchors_preset = 7
 anchor_left = 0.5
 anchor_top = 1.0
 anchor_right = 0.5
 anchor_bottom = 1.0
-offset_left = -27.5
-offset_top = -38.0
-offset_right = 27.5
+offset_left = -49.0
+offset_top = -42.0
+offset_right = 49.0
 grow_horizontal = 2
 grow_vertical = 0
 theme = SubResource("Theme_bpw7i")
-text = "Salir."
+text = "Salir"
+
+[node name="Configuracion" type="Control" parent="."]
+visible = false
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="Bg" type="ColorRect" parent="Configuracion"]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+color = Color(0.529412, 0.764706, 0.741176, 1)
+
+[node name="Panel" type="Panel" parent="Configuracion"]
+custom_minimum_size = Vector2(0, 50)
+layout_mode = 1
+anchors_preset = 10
+anchor_right = 1.0
+offset_bottom = 100.0
+grow_horizontal = 2
+
+[node name="Label" type="Label" parent="Configuracion/Panel"]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+text = "Configuracion."
+label_settings = SubResource("LabelSettings_hpbxg")
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="Label" type="Label" parent="Configuracion"]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+text = "En construccion..."
+label_settings = SubResource("LabelSettings_jtflm")
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="Exit" type="Button" parent="Configuracion"]
+texture_filter = 5
+layout_mode = 1
+anchors_preset = 7
+anchor_left = 0.5
+anchor_top = 1.0
+anchor_right = 0.5
+anchor_bottom = 1.0
+offset_left = -49.0
+offset_top = -42.0
+offset_right = 49.0
+grow_horizontal = 2
+grow_vertical = 0
+theme = SubResource("Theme_bpw7i")
+text = "Salir"
+
+[node name="Ayuda" type="Control" parent="."]
+visible = false
+texture_filter = 5
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+size_flags_horizontal = 3
+size_flags_vertical = 3
+
+[node name="Bg" type="ColorRect" parent="Ayuda"]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+color = Color(0.529412, 0.764706, 0.741176, 1)
+
+[node name="Panel" type="Panel" parent="Ayuda"]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="ItemList" type="ItemList" parent="Ayuda"]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="Controles" type="Label" parent="Ayuda/ItemList"]
+layout_mode = 1
+anchors_preset = 10
+anchor_right = 1.0
+offset_bottom = 94.0
+grow_horizontal = 2
+text = "Controles
+"
+label_settings = SubResource("LabelSettings_8f2n4")
+horizontal_alignment = 1
+
+[node name="Label" type="Label" parent="Ayuda/ItemList"]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+text = "
+Movimiento del Personaje:
+A --- izquierda --- flecha izquierda
+w --- arriba --- flecha arriba
+D --- derecha --- flecha derecha
+S ---abajo --- flecha abajo
+X -- ataque
+
+Cambio de personaje
+Q -- Zorro
+E --- Lobo
+
+Interfaz de usuario
+esc --- abrir menu
+
+Cierra este menu presionando ESC"
+label_settings = SubResource("LabelSettings_qisyc")
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="Creditos" type="Control" parent="."]
+visible = false
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+metadata/_edit_use_anchors_ = true
+
+[node name="Bg" type="ColorRect" parent="Creditos"]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+color = Color(0.529412, 0.764706, 0.741176, 1)
+
+[node name="Panel2" type="Panel" parent="Creditos"]
+custom_minimum_size = Vector2(0, 50)
+layout_mode = 1
+anchors_preset = 10
+anchor_right = 1.0
+offset_bottom = 120.0
+grow_horizontal = 2
+
+[node name="Label" type="Label" parent="Creditos/Panel2"]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+text = "Creditos"
+label_settings = SubResource("LabelSettings_hpbxg")
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="Panel" type="Panel" parent="Creditos"]
+layout_mode = 1
+anchors_preset = 14
+anchor_top = 0.5
+anchor_right = 1.0
+anchor_bottom = 0.5
+offset_top = -240.0
+offset_bottom = 361.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="Label" type="Label" parent="Creditos/Panel"]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+text = "Autor: Rudwolf
+Programador: Rudwolf
+Diseñador: ssstale
+Guion: ???
+Diseño de niveles: ???
+Sprites:
+Creador de los sprites de Assets de los animales: LYAseek"
+label_settings = SubResource("LabelSettings_u46a6")
+horizontal_alignment = 1
 
 [connection signal="pressed" from="Panel/Container/New_game" to="." method="_on_new_game_pressed"]
 [connection signal="pressed" from="Panel/Container/Continue" to="." method="_on_continue_pressed"]
+[connection signal="pressed" from="Panel/Container/Options" to="." method="_on_options_pressed"]
+[connection signal="pressed" from="Panel/Container/Help" to="." method="_on_help_pressed"]
+[connection signal="pressed" from="Panel/Container/Credits" to="." method="_on_credits_pressed"]
 [connection signal="pressed" from="Panel/Container/Exit" to="." method="_on_exit_pressed"]
 [connection signal="pressed" from="Continue_Menu/Exit" to="." method="_on_exit_pressed"]
+[connection signal="pressed" from="Configuracion/Exit" to="." method="_on_exit_pressed"]

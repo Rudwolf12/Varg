@@ -1,4 +1,4 @@
-[gd_scene load_steps=4 format=3 uid="uid://bu5hdigyg1yj3"]
+[gd_scene load_steps=6 format=3 uid="uid://bu5hdigyg1yj3"]
 
 [ext_resource type="Script" path="res://UI/GUI/Pause Menu/Pause_Menu.cs" id="1_18d7h"]
 [ext_resource type="FontFile" uid="uid://3hrus0jbsau" path="res://resources/Fonts/Diphylleia/Diphylleia-Regular.ttf" id="1_xsiia"]
@@ -6,6 +6,15 @@
 [sub_resource type="LabelSettings" id="LabelSettings_t55pv"]
 font = ExtResource("1_xsiia")
 font_size = 64
+
+[sub_resource type="LabelSettings" id="LabelSettings_ns3m4"]
+font = ExtResource("1_xsiia")
+font_size = 32
+
+[sub_resource type="LabelSettings" id="LabelSettings_uwqth"]
+font = ExtResource("1_xsiia")
+font_size = 64
+font_color = Color(0, 0, 0, 1)
 
 [node name="Control" type="Control"]
 light_mask = 513
@@ -35,11 +44,12 @@ grow_vertical = 2
 layout_mode = 2
 anchor_right = 1.0
 anchor_bottom = 0.171
-offset_bottom = 0.120995
+offset_bottom = 65.88
 grow_horizontal = 2
 text = "Pausa"
 label_settings = SubResource("LabelSettings_t55pv")
 horizontal_alignment = 1
+vertical_alignment = 1
 language = "es_MX"
 
 [node name="BoxContainer" type="BoxContainer" parent="."]
@@ -77,6 +87,16 @@ theme_override_font_sizes/font_size = 24
 text = "Regresar al menu"
 language = "es_MX"
 
+[node name="btnConfiguracion" type="Button" parent="BoxContainer"]
+clip_contents = true
+layout_mode = 2
+focus_neighbor_top = NodePath("../btnReanudar")
+focus_neighbor_bottom = NodePath("../btnSalir")
+theme_override_fonts/font = ExtResource("1_xsiia")
+theme_override_font_sizes/font_size = 24
+text = "Configuración"
+language = "es_MX"
+
 [node name="btnSalir" type="Button" parent="BoxContainer"]
 clip_contents = true
 layout_mode = 2
@@ -86,5 +106,78 @@ theme_override_font_sizes/font_size = 24
 text = "Salir"
 language = "es_MX"
 
+[node name="Configuracion" type="Control" parent="."]
+visible = false
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="Bg" type="ColorRect" parent="Configuracion"]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+color = Color(0.611465, 0.695121, 1, 1)
+
+[node name="Panel" type="Panel" parent="Configuracion"]
+custom_minimum_size = Vector2(0, 50)
+layout_mode = 1
+anchors_preset = 10
+anchor_right = 1.0
+offset_bottom = 100.0
+grow_horizontal = 2
+
+[node name="Label" type="Label" parent="Configuracion/Panel"]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+text = "Configuracion."
+label_settings = SubResource("LabelSettings_ns3m4")
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="Label" type="Label" parent="Configuracion"]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+text = "En construccion..."
+label_settings = SubResource("LabelSettings_uwqth")
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="btnReanudar" type="Button" parent="Configuracion"]
+clip_contents = true
+layout_mode = 1
+anchors_preset = 7
+anchor_left = 0.5
+anchor_top = 1.0
+anchor_right = 0.5
+anchor_bottom = 1.0
+offset_left = -184.5
+offset_top = -131.0
+offset_right = 184.5
+offset_bottom = -88.0
+grow_horizontal = 2
+grow_vertical = 0
+focus_neighbor_bottom = NodePath("../../BoxContainer/btnRegresar")
+theme_override_fonts/font = ExtResource("1_xsiia")
+theme_override_font_sizes/font_size = 24
+text = "Reanudar"
+language = "es_MX"
+
 [connection signal="pressed" from="BoxContainer/btnReanudar" to="." method="_on_btn_reanudar_pressed"]
+[connection signal="pressed" from="BoxContainer/btnRegresar" to="." method="_on_btn_regresar_pressed"]
+[connection signal="pressed" from="BoxContainer/btnConfiguracion" to="." method="_on_btn_configuracion_pressed"]
 [connection signal="pressed" from="BoxContainer/btnSalir" to="." method="_on_btn_salir_pressed"]
+[connection signal="pressed" from="Configuracion/btnReanudar" to="." method="_on_btn_reanudar_pressed"]

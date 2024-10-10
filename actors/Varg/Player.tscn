@@ -1,4 +1,4 @@
-[gd_scene load_steps=22 format=3 uid="uid://durtvisrw3s74"]
+[gd_scene load_steps=21 format=3 uid="uid://durtvisrw3s74"]
 
 [ext_resource type="Script" path="res://actors/Varg/Player.cs" id="1_u8ntk"]
 [ext_resource type="SpriteFrames" uid="uid://d3joqwceulqkm" path="res://actors/Varg/Wolf_animation.tres" id="2_5vl5u"]
@@ -6,7 +6,6 @@
 [ext_resource type="PackedScene" uid="uid://c6m5vybgcw3xp" path="res://UI/GUI/Mobile/control.tscn" id="4_prhnh"]
 [ext_resource type="PackedScene" uid="uid://bu5hdigyg1yj3" path="res://UI/GUI/Pause Menu/Pause_Menu.tscn" id="4_y5iil"]
 [ext_resource type="FontFile" uid="uid://3hrus0jbsau" path="res://resources/Fonts/Diphylleia/Diphylleia-Regular.ttf" id="5_5rwoe"]
-[ext_resource type="Script" path="res://actors/Varg/Instrucciones_temporal.cs" id="5_grb30"]
 [ext_resource type="Texture2D" uid="uid://bht6ltkyn6l3o" path="res://resources/images/ui - gui/TextureOnly_Universal_Version/Source/Keyboard_Mouse/Dark/T_Keyboard_R_Key_Dark-1.png" id="8_ui173"]
 [ext_resource type="Texture2D" uid="uid://2t388kvvgpu5" path="res://resources/images/ui - gui/TextureOnly_Universal_Version/Source/Keyboard_Mouse/White/T_Keyboard_R_Key_White-1.png" id="9_jss2n"]
 [ext_resource type="Texture2D" uid="uid://d3por5rumm4h8" path="res://resources/images/ui - gui/TextureOnly_Universal_Version/Source/Keyboard_Mouse/Dark/T_Keyboard_R_Key_Dark.png" id="10_sgj2g"]
@@ -17,20 +16,18 @@
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_15cpy"]
 size = Vector2(40, 24)
 
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_o0vpc"]
+size = Vector2(40, 28)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_otuww"]
+size = Vector2(33, 59)
+
 [sub_resource type="StyleBoxFlat" id="StyleBoxFlat_phcdn"]
 bg_color = Color(0.568627, 0.0627451, 0.2, 1)
 
 [sub_resource type="Theme" id="Theme_qx8m7"]
 ProgressBar/fonts/font = ExtResource("5_5rwoe")
 ProgressBar/styles/fill = SubResource("StyleBoxFlat_phcdn")
-
-[sub_resource type="LabelSettings" id="LabelSettings_1835h"]
-font = ExtResource("5_5rwoe")
-font_size = 64
-
-[sub_resource type="LabelSettings" id="LabelSettings_eie15"]
-font = ExtResource("5_5rwoe")
-font_size = 22
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_nqqpb"]
 size = Vector2(100, 100)
@@ -44,13 +41,13 @@ size = Vector2(100, 100)
 [node name="Player" type="CharacterBody2D"]
 texture_filter = 1
 script = ExtResource("1_u8ntk")
-metadata/onAttack = false
 
 [node name="Wolf" type="AnimatedSprite2D" parent="."]
 scale = Vector2(4, 4)
 sprite_frames = ExtResource("2_5vl5u")
-animation = &"die"
+animation = &"idle"
 autoplay = "idle"
+frame_progress = 0.367318
 
 [node name="Fox" type="AnimatedSprite2D" parent="."]
 visible = false
@@ -58,11 +55,21 @@ scale = Vector2(4, 4)
 sprite_frames = ExtResource("3_4i0lx")
 animation = &"idle"
 autoplay = "idle"
-frame_progress = 0.724174
+frame_progress = 0.84722
 
-[node name="ColisionShape2D" type="CollisionShape2D" parent="."]
+[node name="body_Fox" type="CollisionShape2D" parent="."]
 position = Vector2(-4, 20)
 shape = SubResource("RectangleShape2D_15cpy")
+disabled = true
+
+[node name="body_Wolf" type="CollisionShape2D" parent="."]
+position = Vector2(-4, 18)
+shape = SubResource("RectangleShape2D_o0vpc")
+
+[node name="bite" type="CollisionShape2D" parent="."]
+position = Vector2(45, 2.5)
+shape = SubResource("RectangleShape2D_otuww")
+disabled = true
 
 [node name="Control4" parent="." instance=ExtResource("4_prhnh")]
 visible = false
@@ -108,9 +115,43 @@ offset_right = 0.279984
 offset_bottom = -0.0800018
 grow_horizontal = 2
 theme = SubResource("Theme_qx8m7")
-min_value = 100.0
-value = 100.0
-rounded = true
+value = 50.0
+allow_greater = true
+
+[node name="TouchScreenButton" type="TouchScreenButton" parent="."]
+texture_filter = 5
+position = Vector2(-364, 136)
+scale = Vector2(0.375, 0.375)
+texture_normal = ExtResource("8_ui173")
+texture_pressed = ExtResource("9_jss2n")
+shape = SubResource("RectangleShape2D_nqqpb")
+action = "left"
+visibility_mode = 1
+
+[node name="TouchScreenButton2" type="TouchScreenButton" parent="."]
+texture_filter = 5
+position = Vector2(-261, 136)
+scale = Vector2(0.375, 0.375)
+texture_normal = ExtResource("10_sgj2g")
+texture_pressed = ExtResource("11_c5hdv")
+shape = SubResource("RectangleShape2D_5k0gq")
+action = "right"
+visibility_mode = 1
+
+[node name="TouchScreenButton3" type="TouchScreenButton" parent="."]
+position = Vector2(213, 136)
+scale = Vector2(0.375, 0.375)
+texture_normal = ExtResource("10_y7rhg")
+texture_pressed = ExtResource("13_8utrk")
+shape = SubResource("RectangleShape2D_jm2sh")
+action = "up"
+visibility_mode = 1
+
+[node name="Camera2D2" type="Camera2D" parent="."]
+visible = false
+texture_filter = 1
+zoom = Vector2(1.6, 1.6)
+editor_draw_drag_margin = true
 
 [node name="Control" parent="." instance=ExtResource("4_y5iil")]
 visible = false
@@ -126,108 +167,6 @@ offset_bottom = 528.0
 grow_vertical = 1
 scale = Vector2(0.625, 0.625)
 size_flags_stretch_ratio = 0.0
-
-[node name="Control2" type="Control" parent="."]
-texture_filter = 5
-clip_contents = true
-custom_minimum_size = Vector2(1280, 720)
-layout_mode = 3
-anchors_preset = 0
-offset_left = -400.0
-offset_top = -225.0
-offset_right = 880.0
-offset_bottom = 495.0
-scale = Vector2(0.625, 0.625)
-size_flags_horizontal = 3
-size_flags_vertical = 3
-script = ExtResource("5_grb30")
-
-[node name="Panel" type="Panel" parent="Control2"]
-layout_mode = 1
-anchors_preset = 15
-anchor_right = 1.0
-anchor_bottom = 1.0
-grow_horizontal = 2
-grow_vertical = 2
-
-[node name="Label" type="Label" parent="Control2"]
-layout_mode = 1
-anchors_preset = 10
-anchor_right = 1.0
-offset_bottom = 23.0
-grow_horizontal = 2
-text = "Controles
-"
-label_settings = SubResource("LabelSettings_1835h")
-horizontal_alignment = 1
-
-[node name="ItemList" type="ItemList" parent="Control2"]
-layout_mode = 1
-anchors_preset = 14
-anchor_top = 0.5
-anchor_right = 1.0
-anchor_bottom = 0.5
-offset_top = -265.0
-offset_bottom = 342.0
-grow_horizontal = 2
-grow_vertical = 2
-
-[node name="Label" type="Label" parent="Control2/ItemList"]
-layout_mode = 1
-anchors_preset = 15
-anchor_right = 1.0
-anchor_bottom = 1.0
-grow_horizontal = 2
-grow_vertical = 2
-text = "	Movimiento del Personaje:
-A --- izquierda --- flecha izquierda
-w --- arriba --- flecha arriba
-D --- derecha --- flecha derecha
-S ---abajo --- flecha abajo
-X -- ataque
-
-Cambio de personaje
-Q -- Zorro
-E --- Lobo
-
-Interfaz de usuario
-esc --- abrir menu
-
-Cierra este menu presionando ENTER"
-label_settings = SubResource("LabelSettings_eie15")
-horizontal_alignment = 1
-vertical_alignment = 1
-
-[node name="TouchScreenButton" type="TouchScreenButton" parent="."]
-texture_filter = 5
-position = Vector2(-364, 136)
-scale = Vector2(0.375, 0.375)
-texture_normal = ExtResource("8_ui173")
-texture_pressed = ExtResource("9_jss2n")
-shape = SubResource("RectangleShape2D_nqqpb")
-action = "left"
-
-[node name="TouchScreenButton2" type="TouchScreenButton" parent="."]
-texture_filter = 5
-position = Vector2(-261, 136)
-scale = Vector2(0.375, 0.375)
-texture_normal = ExtResource("10_sgj2g")
-texture_pressed = ExtResource("11_c5hdv")
-shape = SubResource("RectangleShape2D_5k0gq")
-action = "right"
-
-[node name="TouchScreenButton3" type="TouchScreenButton" parent="."]
-position = Vector2(213, 136)
-scale = Vector2(0.375, 0.375)
-texture_normal = ExtResource("10_y7rhg")
-texture_pressed = ExtResource("13_8utrk")
-shape = SubResource("RectangleShape2D_jm2sh")
-action = "up"
-
-[node name="Camera2D2" type="Camera2D" parent="."]
-texture_filter = 1
-zoom = Vector2(1.6, 1.6)
-editor_draw_drag_margin = true
 
 [connection signal="pressed" from="Control4/Container/VBoxContainer/Left" to="." method="_on_left_pressed"]
 [connection signal="pressed" from="Control4/Container/VBoxContainer/Right" to="." method="_on_right_pressed"]
